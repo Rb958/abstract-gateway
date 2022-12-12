@@ -1,0 +1,106 @@
+plugins {
+	id 'java-library'
+	id 'org.springframework.boot' version '2.7.6'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id 'maven-publish'
+	id 'signing'
+}
+
+group = 'io.github.rb958'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+java {
+	withJavadocJar()
+	withSourcesJar()
+}
+
+publishing {
+	publications {
+		mavenJava(MavenPublication) {
+			artifactId = 'abstract-gateway'
+			from components.java
+			versionMapping {
+				usage('java-api') {
+					fromResolutionOf('runtimeClasspath')
+				}
+				usage('java-runtime') {
+					fromResolutionResult()
+				}
+			}
+			pom {
+				name = 'abstract-gateway'
+				packaging = 'jar'
+				description = 'abstract-gateway'
+				url = 'https://github.com/Rb958/abstract-gateway'
+				licenses {
+					license {
+						name = 'The Apache License, Version 2.0'
+						url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+					}
+				}
+				developers{
+					developer{
+						id = 'richie'
+						name ='Richie AKAWA'
+						email = 'richiebayless@gmail.com'
+					}
+				}
+				scm {
+					connection = 'scm:git:git://github.com/Rb958/abstract-gateway.git'
+//					developerConnection = 'scm:git:ssh://example.com/my-library.git'
+					url = 'https://github.com/Rb958/abstract-gateway'
+				}
+			}
+		}
+	}
+	repositories {
+		maven {
+			// change URLs to point to your repos, e.g. http://my.org/repo
+			def releasesRepoUrl = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"//layout.buildDirectory.dir('repos/releases')
+			def snapshotsRepoUrl = "https://s01.oss.sonatype.org/content/repositories/snapshots/" //layout.buildDirectory.dir('repos/snapshots')
+			url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+			credentials {
+				username = "rb958"
+				password = "Cm-uds-15sci0973"
+			}
+
+		}
+	}
+}
+
+signing {
+	sign publishing.publications.mavenJava
+}
+
+
+javadoc {
+	if(JavaVersion.current().isJava9Compatible()) {
+		options.addBooleanOption('html5', true)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
