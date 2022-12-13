@@ -1,18 +1,6 @@
 package com.rbstartup.abstractgateway.dto.status;
 
-import com.rbstartup.abstractgateway.dto.BasicResponseDTO;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.rbstartup.abstractgateway.dto.payment.PaymentResponseDTO;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class StatusResponseDTO extends BasicResponseDTO<Object> {
-    private String providerId;
-    private String transactionId;
-    private String financialId;
-    private String externalId;
-    private String requestId;
-    private String applicationId;
+public class StatusResponseDTO<T> extends PaymentResponseDTO<T> {
 }

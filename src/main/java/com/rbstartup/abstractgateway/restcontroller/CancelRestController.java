@@ -1,6 +1,7 @@
 package com.rbstartup.abstractgateway.restcontroller;
 
 import com.rbstartup.abstractgateway.dto.cancel.CancelRequestDTO;
+import com.rbstartup.abstractgateway.dto.payment.PaymentResponseDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,5 +10,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public interface CancelRestController {
 
     @PostMapping
-    ResponseEntity<Object> cancel(CancelRequestDTO requestDTO);
+    ResponseEntity<PaymentResponseDTO> cancel(CancelRequestDTO requestDTO);
 }

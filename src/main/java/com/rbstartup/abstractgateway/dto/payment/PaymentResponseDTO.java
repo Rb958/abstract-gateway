@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class PaymentResponseDTO extends BasicResponseDTO<Object> {
+public class PaymentResponseDTO<T> extends BasicResponseDTO<T> {
     private String providerId;
     private String transactionId;
     private String externalId;
