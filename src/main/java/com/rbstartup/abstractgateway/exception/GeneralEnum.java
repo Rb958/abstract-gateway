@@ -1,12 +1,12 @@
 package com.rbstartup.abstractgateway.exception;
 
-public enum GeneralException implements BaseExceptionMessage{
+public enum GeneralEnum implements BaseExceptionMessage{
     GENERAL_FAILURE(501, "General failure");
 
     private final int httpCode;
     private final String message;
 
-    private GeneralException(int httpCode, String message){
+    private GeneralEnum(int httpCode, String message){
         this.message = message;
         this.httpCode = httpCode;
     }

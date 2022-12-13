@@ -11,6 +11,6 @@ import java.util.List;
 @AllArgsConstructor
 public class BasicListResponseDTO<T> {
     private String message;
-    private String code;
+    private int code;
     private List<T> result;
 }
