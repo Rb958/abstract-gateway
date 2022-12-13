@@ -1,7 +1,7 @@
 package com.rbstartup.abstractgateway.exception;
 
 public enum ApiExceptionMessage implements BaseExceptionMessage {
-    DEFAUL_MESSAGE(701, "APi error");
+    DEFAULT_MESSAGE(701, "APi error");
 
     private final int httpCode;
     private final String message;

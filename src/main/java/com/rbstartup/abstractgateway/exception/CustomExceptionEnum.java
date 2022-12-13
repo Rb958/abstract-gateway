@@ -1,7 +1,7 @@
 package com.rbstartup.abstractgateway.exception;
 
 public enum CustomExceptionEnum implements BaseExceptionMessage{
-    DEFAUL_MESSAGE(601, "Custom error");
+    DEFAULT_MESSAGE(601, "Custom error");
 
     private final int httpCode;
     private final String message;

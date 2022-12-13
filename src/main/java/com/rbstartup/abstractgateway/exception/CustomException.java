@@ -6,7 +6,7 @@ public class CustomException extends AbstractException{
     }
 
     public CustomException(String message, String adapterCodePart, String userCodePart) {
-        super(CustomExceptionEnum.DEFAUL_MESSAGE, adapterCodePart, userCodePart);
+        super(CustomExceptionEnum.DEFAULT_MESSAGE, adapterCodePart, userCodePart);
         this.message = message;
     }
 }

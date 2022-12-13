@@ -7,7 +7,7 @@ public class BadRequest extends AbstractException{
     }
 
     public BadRequest(String message, String adapterCodePart, String userCodePart) {
-        super(BadRequestEnum.DEFAUL_MESSAGE, adapterCodePart, userCodePart);
+        super(BadRequestEnum.DEFAULT_MESSAGE, adapterCodePart, userCodePart);
         this.message = message;
     }
 }

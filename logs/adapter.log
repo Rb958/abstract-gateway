@@ -1,0 +1,34 @@
+2022-12-13 15:39:02,637 INFO o.s.b.StartupInfoLogger [restartedMain] Starting AbstractGatewayApplication using Java 17.0.5 on MacBook-Pro-de-AFRIKPAY.local with PID 4019 (/Users/afrikpay/www/abstract-gateway/build/classes/java/main started by afrikpay in /Users/afrikpay/www/abstract-gateway)
+2022-12-13 15:39:02,643 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-12-13 15:39:02,995 INFO o.s.b.l.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-12-13 15:39:02,995 INFO o.s.b.l.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-12-13 15:39:06,358 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2022-12-13 15:39:06,394 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2022-12-13 15:39:06,395 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2022-12-13 15:39:06,396 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.69]
+2022-12-13 15:39:06,573 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-12-13 15:39:06,573 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 3576 ms
+2022-12-13 15:39:08,404 WARN o.s.b.d.a.OptionalLiveReloadServer [restartedMain] Unable to start LiveReload server
+2022-12-13 15:39:08,437 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2022-12-13 15:39:08,449 WARN o.s.c.s.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2022-12-13 15:39:08,455 INFO o.a.j.l.DirectJDKLog [restartedMain] Pausing ProtocolHandler ["http-nio-8080"]
+2022-12-13 15:39:08,456 INFO o.a.j.l.DirectJDKLog [restartedMain] Stopping service [Tomcat]
+2022-12-13 15:39:08,527 INFO o.a.j.l.DirectJDKLog [restartedMain] Stopping ProtocolHandler ["http-nio-8080"]
+2022-12-13 15:39:08,528 INFO o.a.j.l.DirectJDKLog [restartedMain] Destroying ProtocolHandler ["http-nio-8080"]
+2022-12-13 15:39:08,544 INFO o.s.b.a.l.ConditionEvaluationReportLoggingListener [restartedMain] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-12-13 15:39:08,596 ERROR o.s.b.d.LoggingFailureAnalysisReporter [restartedMain] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+

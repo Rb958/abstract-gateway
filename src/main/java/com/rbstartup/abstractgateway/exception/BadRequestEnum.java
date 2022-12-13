@@ -1,7 +1,7 @@
 package com.rbstartup.abstractgateway.exception;
 
 public enum BadRequestEnum implements BaseExceptionMessage{
-    DEFAUL_MESSAGE(401, "Bad request");
+    DEFAULT_MESSAGE(401, "Bad request");
 
     private final int httpCode;
     private final String message;

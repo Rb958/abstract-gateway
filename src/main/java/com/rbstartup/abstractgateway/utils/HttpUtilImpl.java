@@ -26,34 +26,26 @@ public class HttpUtilImpl implements HttpUtil {
         // Default constructor
     }
 
-//    @Override
-//    public boolean isOk(Map<String, Object> response) {
-//        if (!(response.containsKey("code") && (int) response.get("code") == 200 && response.containsKey("result") && response.get("result") != null)){
-//            throw new AbsctractException(GeneralException.GENERAL_FAILURE);
-//        }
-//        Map<String, Object> result = (Map<String, Object>) response.get("result");
-//        if (!(result.containsKey("response") && result.get("response") != null)){
-//            throw new AbsctractException(GeneralException.GENERAL_FAILURE);
-//        }
-//        Map<String, Object> cbsResponse = (Map<String, Object>) result.get("response");
-//        return cbsResponse.containsKey("responsecode") && (int) cbsResponse.get("responsecode") == 0;
-//    }
-
     @Override
     public Map<String, Object> sendPOST(String url, Map<String, Object> body, Map<String, String> headers) {
-//        try {
-//            RestTemplate restTemplate = new RestTemplate();
-//            MultiValueMap<String, String> tmpHeader = newMult
-//            HttpEntity<Map<String, Object>> request = new HttpEntity(body, tmpHeader);
-//            return mapper.readValue(
-//                    restTemplate.postForObject(url, request, String.class),
-//                    new TypeReference<>() {}
-//            );
-//        }catch (Exception e){
-//            logger.error(e.getMessage(), e);
-//            return new HashMap<>();
-//        }
-        return new HashMap<>();
+        try {
+            RestTemplate restTemplate = new RestTemplate();
+
+            HttpHeaders headersO = new HttpHeaders();
+            for (Map.Entry<String, String> entry : headers.entrySet()) {
+                headersO.add(entry.getKey(), entry.getValue());
+            }
+
+            HttpEntity<Map<String, Object>> request = new HttpEntity<Map<String, Object>>(body, headersO);
+
+            return mapper.readValue(
+                    restTemplate.postForObject(url, request, String.class),
+                    new TypeReference<>() {}
+            );
+        }catch (Exception e){
+            logger.error(e.getMessage(), e);
+            return new HashMap<>();
+        }
     }
 
     @Override

@@ -5,7 +5,7 @@ public class APIException extends AbstractException {
         super(message, adapterCodePart, userCodePart);
     }
     public APIException(String message, String adapterCodePart, String userCodePart) {
-        super(ApiExceptionMessage.DEFAUL_MESSAGE, adapterCodePart, userCodePart);
+        super(ApiExceptionMessage.DEFAULT_MESSAGE, adapterCodePart, userCodePart);
         this.message = message;
     }
 }
